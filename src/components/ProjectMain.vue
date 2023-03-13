@@ -20,6 +20,7 @@ export default {
             axios.get(`${this.baseUrl}/api/projects`).then((response) => {
                 this.projects = response.data.projects;
                 this.loading = false;
+                console.log(this.projects);
             });
         }
     },

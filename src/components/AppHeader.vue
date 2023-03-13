@@ -4,6 +4,10 @@ export default {
     data(){
         return{
             menu: [
+            {
+                    label: 'Home',
+                    route: 'homepage'
+                },
                 {
                     label: 'Projects',
                     route: 'projects'
@@ -15,14 +19,14 @@ export default {
 </script>
 <template lang="">
     <div class="navbar my_nav">
-        <div class="container">
+        <div class="container py-3">
             <div class="row">
                 <div class="col">
-                    <ul>
-                        <li class="nav-item" v-for='(item, id) in menu' :key='id'>
-                            <a :href="item.route">
+                    <ul class='d-flex'>
+                        <li class="nav-item me-3" v-for='(item, id) in menu' :key='id'>
+                            <router-link :to="{ name: item.route }" class=''>
                                 {{ item.label }}
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
